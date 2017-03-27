@@ -1,0 +1,9 @@
+c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\UnitTestProject1\bin\Debug\Task1.dll
+c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\UnitTestProject1\bin\Debug\Task1.pdb
+c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\UnitTestProject1\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
