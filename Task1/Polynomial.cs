@@ -57,23 +57,7 @@ namespace Task1
             Power = power;
         }
         #endregion
-
-        public static Polynomial operator +(Polynomial a, Polynomial b) => (a.Power >= b.Power) ? Add(a, b) : Add(b, a);
-
-
-        private static Polynomial Add(Polynomial a, Polynomial b)
-        {
-            int j = 0;
-            Polynomial newPolynomial = new Polynomial(a.Power);
-            for (int i = a.Power; i > b.Power; i--)
-                newPolynomial.Coefficients[j] = a.Coefficients[j++];
-            for (int i = 0; i < b.Coefficients.Length; i++)
-                newPolynomial.Coefficients[j] = a.Coefficients[j++] + b.Coefficients[i];
-            return newPolynomial;
-
-
-        }
-        ///<summary>
+         ///<summary>
         /// The method calculates Polynomial
         ///</summary>
         /// <param name="x">Input value</param>
@@ -85,7 +69,17 @@ namespace Task1
                 value += Coefficients[i] * Math.Pow(x, Power - i);
             return value;
         }
-
+        public static Polynomial operator +(Polynomial a, Polynomial b) => (a.Power >= b.Power) ? Add(a, b) : Add(b, a);
+        private static Polynomial Add(Polynomial a, Polynomial b)
+        {
+            int j = 0;
+            Polynomial newPolynomial = new Polynomial(a.Power);
+            for (int i = a.Power; i > b.Power; i--)
+                newPolynomial.Coefficients[j] = a.Coefficients[j++];
+            for (int i = 0; i < b.Coefficients.Length; i++)
+                newPolynomial.Coefficients[j] = a.Coefficients[j++] + b.Coefficients[i];
+            return newPolynomial;
+        }
 
         public static Polynomial operator -(Polynomial a, Polynomial b) => a.Subtraction(b);
         private Polynomial Subtraction(Polynomial b)
@@ -128,8 +122,11 @@ namespace Task1
         public static bool operator ==(Polynomial a, Polynomial b) => a.Equals(b);
         public static bool operator !=(Polynomial a, Polynomial b) => !(a == b);
 
-
         #region override methods
+        ///<summary>
+        /// Returns a string that represents the current object.
+        ///</summary>
+        ///<returns>A string that represents the current object.</returns>
         public override string ToString()
         {
             string view = string.Empty;
@@ -165,11 +162,20 @@ namespace Task1
             return (view == String.Empty) ? "0" : view;
         }
 
+        ///<summary>
+        /// Serves as the default hash function.
+        ///</summary>
+        ///<returns>A hash code for the current object.</returns>
         public override int GetHashCode()
         {
             return Power ^ (int)Coefficients[0] + 1;
         }
 
+        ///<summary>
+        /// Determines whether the specified object is equal to the current object.
+        ///</summary>
+        ///<param name="obj">The object to compare with the current object.</param>
+        ///<returns>true if the specified object is equal to the current object; otherwise, false.</returns>
         public override bool Equals(object obj)
         {
             if (obj == null || !(obj is Polynomial) || this.GetHashCode() != obj.GetHashCode())
