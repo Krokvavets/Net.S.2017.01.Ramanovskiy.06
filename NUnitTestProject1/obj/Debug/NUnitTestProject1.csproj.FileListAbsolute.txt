@@ -1,9 +1,0 @@
-c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\NUnitTestProject1\obj\Debug\NUnitTestProject1.csprojResolveAssemblyReference.cache
-c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\NUnitTestProject1\bin\Debug\NUnitTestProject1.dll
-c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\NUnitTestProject1\bin\Debug\NUnitTestProject1.pdb
-c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\NUnitTestProject1\bin\Debug\nunit.framework.dll
-c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\NUnitTestProject1\bin\Debug\Task1.dll
-c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\NUnitTestProject1\bin\Debug\nunit.framework.xml
-c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\NUnitTestProject1\bin\Debug\Task1.pdb
-c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\NUnitTestProject1\obj\Debug\NUnitTestProject1.dll
-c:\Users\Виктория\Documents\Visual Studio 2015\Projects\Net.S.2017.01.Ramanovskiy.06\NUnitTestProject1\obj\Debug\NUnitTestProject1.pdb
