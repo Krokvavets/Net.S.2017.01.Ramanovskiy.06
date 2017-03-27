@@ -8,7 +8,7 @@ namespace Task1
 {
     public class Polynomial
     {
-        
+
         public double[] Coefficients { get; private set; }
         public int Power { get; private set; }
 
@@ -58,21 +58,26 @@ namespace Task1
         }
         #endregion
 
-        public static Polynomial operator + (Polynomial a, Polynomial b) => (a.Power >= b.Power)? Add(a,b) : Add(b, a);
+        public static Polynomial operator +(Polynomial a, Polynomial b) => (a.Power >= b.Power) ? Add(a, b) : Add(b, a);
 
 
         private static Polynomial Add(Polynomial a, Polynomial b)
         {
             int j = 0;
             Polynomial newPolynomial = new Polynomial(a.Power);
-            for(int i = a.Power; i> b.Power; i--)
+            for (int i = a.Power; i > b.Power; i--)
                 newPolynomial.Coefficients[j] = a.Coefficients[j++];
-            for (int i = 0; i< b.Coefficients.Length; i++)
+            for (int i = 0; i < b.Coefficients.Length; i++)
                 newPolynomial.Coefficients[j] = a.Coefficients[j++] + b.Coefficients[i];
             return newPolynomial;
-            
+
 
         }
+        ///<summary>
+        /// The method calculates Polynomial
+        ///</summary>
+        /// <param name="x">Input value</param>
+        ///<returns>reults</returns>
         public double GetValue(double x)
         {
             double value = 0;
@@ -83,10 +88,10 @@ namespace Task1
 
 
         public static Polynomial operator -(Polynomial a, Polynomial b) => a.Subtraction(b);
-        private  Polynomial Subtraction (Polynomial b)
+        private Polynomial Subtraction(Polynomial b)
         {
             for (int i = 0; i < b.Coefficients.Length; i++)
-                b.Coefficients[i] *= -1;           
+                b.Coefficients[i] *= -1;
             return (this.Power >= b.Power) ? Add(this, b) : Add(b, this);
         }
 
@@ -98,15 +103,15 @@ namespace Task1
             for (int i = 0; i < a.Coefficients.Length; i++)
                 newPolynomial.Coefficients[i] = a.Coefficients[i] * b;
             return newPolynomial;
-        }       
+        }
 
-        public static Polynomial operator *(Polynomial a, Polynomial b) => Multiplication( a, b);
+        public static Polynomial operator *(Polynomial a, Polynomial b) => Multiplication(a, b);
         private static Polynomial Multiplication(Polynomial a, Polynomial b)
         {
             Polynomial newPolynomial = new Polynomial(b.Power + a.Power);
             for (int i = 0; i < b.Coefficients.Length; i++)
                 for (int j = 0; j < a.Coefficients.Length; j++)
-                    newPolynomial.Coefficients[j+i] += a.Coefficients[j] * b.Coefficients[i];
+                    newPolynomial.Coefficients[j + i] += a.Coefficients[j] * b.Coefficients[i];
             return newPolynomial;
         }
 
@@ -120,8 +125,8 @@ namespace Task1
             return newPolynomial;
         }
 
-        public static bool operator ==(Polynomial a, Polynomial b)=>a.Equals(b);
-        public static bool operator !=(Polynomial a, Polynomial b) => !(a == b); 
+        public static bool operator ==(Polynomial a, Polynomial b) => a.Equals(b);
+        public static bool operator !=(Polynomial a, Polynomial b) => !(a == b);
 
 
         #region override methods
@@ -136,12 +141,12 @@ namespace Task1
                     view += String.Format(" " + Coefficients[i]);
                     break;
                 }
-                else if(Power - i == 0 )
+                else if (Power - i == 0)
                 {
                     view += String.Format(" + " + Coefficients[i]);
                     break;
                 }
-                if(Power - i == 1 && Coefficients[i] < 0)
+                if (Power - i == 1 && Coefficients[i] < 0)
                 {
                     view += String.Format(" " + Coefficients[i] + "x");
                     continue;
@@ -151,18 +156,18 @@ namespace Task1
                     view += String.Format(" + " + Coefficients[i] + "x");
                     continue;
                 }
-                if ( i == 0 || this.Coefficients[i] < 0)
+                if (i == 0 || this.Coefficients[i] < 0)
                     view += String.Format(" " + Coefficients[i] + "x^{0}", Power - i);
                 else
-                    view +=String.Format(" + " + Coefficients[i] +"x^{0}",Power - i);
+                    view += String.Format(" + " + Coefficients[i] + "x^{0}", Power - i);
             }
-                
-            return (view == String.Empty)?"0":view;
+
+            return (view == String.Empty) ? "0" : view;
         }
 
         public override int GetHashCode()
         {
-            return Power^(int)Coefficients[0]+1;
+            return Power ^ (int)Coefficients[0] + 1;
         }
 
         public override bool Equals(object obj)
