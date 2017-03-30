@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace Task1
 {
-    public class Polynomial : ICloneable
+    public sealed class Polynomial : ICloneable
     {
         readonly private int power;
         readonly private double[] coefficients = {};
