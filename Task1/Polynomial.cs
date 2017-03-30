@@ -49,6 +49,8 @@ namespace Task1
         public static Polynomial operator +(Polynomial lhs, Polynomial rhs) => (lhs.power >= rhs.power) ? Add(lhs, rhs) : Add(lhs, rhs);
         public static Polynomial Add(Polynomial a, Polynomial b)
         {
+            if (ReferenceEquals(a, b)) throw new ArgumentNullException("a");
+            if (ReferenceEquals(lhs, null)) throw new ArgumentNullException("a");
             Polynomial newPolynomial = a.Clone();
             int j = a.coefficients.Length - 1;
             if (a.coefficients.Length != b.coefficients.Length)
@@ -99,7 +101,12 @@ namespace Task1
             return newPolynomial;
         }
 
-        public static bool operator ==(Polynomial lhs, Polynomial rhs) => (ReferenceEquals(lhs, rhs)) ? true : lhs.Equals(rhs);
+        public static bool operator ==(Polynomial lhs, Polynomial rhs)
+        {
+            if (ReferenceEquals(lhs, rhs)) return true;
+            if (ReferenceEquals(lhs, null)) return false;
+            return lhs.Equals(rhs);
+        }
 
         public static bool operator !=(Polynomial a, Polynomial b) => !(a == b);
 
@@ -165,12 +172,20 @@ namespace Task1
         ///<returns>true if the specified object is equal to the current object; otherwise, false.</returns>
         public override bool Equals(object obj)
         {
-
+            if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (ReferenceEquals(this, null) || !(obj is Polynomial)) return false;
-            Polynomial pol = obj as Polynomial;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Polynomial)obj);
+        }
+
+        public bool Equals(Polynomial other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            if (this.coefficients.Length != other.coefficients.Length)
+                return false;
             for (int i = 0; i < this.coefficients.Length; i++)
-                if (pol.coefficients[i] != this.coefficients[i]) return false;
+                if (!this.coefficients[i].Equals(other.coefficients[i])) return false;
             return true;
         }
 
