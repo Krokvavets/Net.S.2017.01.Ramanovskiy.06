@@ -10,7 +10,7 @@ namespace Task1
     public class Polynomial : ICloneable
     {
         readonly private int power;
-        readonly private double[] coefficients;
+        readonly private double[] coefficients = {};
         readonly private static double eps;
 
         static Polynomial()
@@ -87,7 +87,6 @@ namespace Task1
                     newPolynomial.coefficients[j + i] += a.coefficients[j] * b.coefficients[i];
 
                 }
-
             return newPolynomial;
         }
 
